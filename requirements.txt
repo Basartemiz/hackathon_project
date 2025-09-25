@@ -1,0 +1,13 @@
+# Core dependencies
+sentence-transformers==2.2.2
+faiss-cpu
+numpy>=1.24.0,<2.0.0
+python-dotenv>=1.0.0
+langchain-openai>=0.1.7
+openai>=1.30.0
+matplotlib
+plotly 
+
+# Optional (helps avoid tokenizers lock issue)
+transformers>=4.36.0
+huggingface-hub>=0.20.0

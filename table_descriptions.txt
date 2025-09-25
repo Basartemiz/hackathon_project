@@ -1,0 +1,24 @@
+Customers
+
+The Customers table stores information about each bank customer. It contains a unique identifier customer_id as the primary key, along with personal details such as name,which is the customer’s full name (first name and last name), birth_city, which is the city where they were born, date_of_birth to record their birthday, and email, which serves as a unique contact detail. This table forms the core of the database since other tables like accounts and loans link to it through the customer ID.
+;
+Accounts
+
+The Accounts table stores details about the financial accounts owned by customers. Each account has an account_id as the primary key and is associated with a specific customer_id that references the Customers table. Additional fields include account_type to specify whether it is a savings or checking account, balance to track the current funds available, and opened_date to record when the account was created. This table allows the system to manage multiple accounts per customer.
+;
+Loans
+
+The Loans table tracks borrowing information for customers. Each loan is uniquely identified by loan_id as the primary key and linked to the borrower using customer_id. The table includes loan_type to indicate whether the loan is personal, mortgage, auto, or business, amount for the principal borrowed, interest_rate to record the applicable loan percentage, and start_date and end_date to define the loan’s timeline. This table provides a structured record of all outstanding and completed loans.
+;
+Payments
+
+The Payments table records payments made by customers toward their loans. Each payment entry has a payment_id as the primary key and is associated with a particular loan using loan_id. It also contains payment_date to log when the payment was made and amount to specify how much money was paid. By linking payments to the Loans table, the system can track repayment history and outstanding balances.
+;
+Transactions
+
+The Transactions table stores the details of all financial movements within accounts. Each transaction has a unique transaction_id as the primary key and is linked to the relevant account through account_id. The table also includes transaction_date to record the exact date of the movement, amount for the value involved, and type to classify it as either a deposit or a withdrawal. This table provides the history of customer account activities.,
+
+;
+Relational Overview
+
+The finance database links together five core tables: Customers, Accounts, Loans, Payments, and Transactions. The Customers table serves as the foundation, since both Accounts and Loans reference it through the customer_id foreign key. Each customer may own multiple accounts in the Accounts table, and each account may contain many entries in the Transactions table, which track deposits and withdrawals. Similarly, a customer can have multiple loans in the Loans table, and every loan may generate multiple entries in the Payments table to record installments and repayments. Together, these relationships form a structured system where customers are at the center, accounts and loans capture financial activities, and transactions and payments record the detailed flow of money.
